@@ -11,10 +11,11 @@
     <string name="requiered_name">Nombre requerido</string>
 
     <string name="error_match">No coincide</string>
-    <string name="logged">Loggueado</string>
+    <string name="logged">Sesión Iniciada</string>
     <string name="registered">Registrado</string>
 
     <string name="name">nombre</string>
     <string name="register">registrate</string>
     <string name="go_to_login">ir a login</string>
+    <string name="loggout">Cerrar Sesión</string>
 </resources>

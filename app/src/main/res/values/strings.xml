@@ -16,5 +16,7 @@
     <string name="name">name</string>
     <string name="register">register</string>
     <string name="go_to_login">go to login</string>
+    <string name="loggout">Logout</string>
+
 
 </resources>

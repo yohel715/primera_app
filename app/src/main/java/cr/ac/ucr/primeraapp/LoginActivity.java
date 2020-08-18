@@ -2,16 +2,22 @@ package cr.ac.ucr.primeraapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import cr.ac.ucr.primeraapp.utils.AppPreferences;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText etEmail;
     private EditText etPassword;
+
+    public static final String PREFERENCES = "myapp_preferences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(email.equalsIgnoreCase("admin@email.com") && password.equalsIgnoreCase("123")) {
             //TODO: Enviarlo al main activiy
             // TODO: almacenar en el storage el usuario logueado
+
+            AppPreferences.getInstance(this).put(AppPreferences.keys.IS_LOGGED_IN, true);
+
             Toast.makeText(this, getString(R.string.logged), Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(this, MainActivity.class);
