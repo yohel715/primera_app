@@ -18,5 +18,7 @@
     <string name="go_to_login">go to login</string>
     <string name="loggout">Logout</string>
 
-
+    <string name="task_name">Task name</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
 </resources>

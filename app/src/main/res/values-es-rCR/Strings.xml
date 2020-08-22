@@ -18,4 +18,8 @@
     <string name="register">registrate</string>
     <string name="go_to_login">ir a login</string>
     <string name="loggout">Cerrar Sesión</string>
+
+    <string name="task_name">Nombre de la tarea</string>
+    <string name="add">Agregar</string>
+    <string name="cancel">Cancelar</string>
 </resources>
