@@ -29,4 +29,8 @@
 
     <string name="profile">Perfil</string>
     <string name="my_task">Mis tareas</string>
+
+    <string name="name_placeholder">Admin todopoderoso</string>
+    <string name="email_placeholder">admin@email.com</string>
+
 </resources>

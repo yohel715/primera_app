@@ -19,17 +19,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 import cr.ac.ucr.primeraapp.adapters.MainViewPagerAdapter;
+import cr.ac.ucr.primeraapp.fragments.ProfileFragment;
 import cr.ac.ucr.primeraapp.fragments.ToDoListFragment;
 import cr.ac.ucr.primeraapp.utils.AppPreferences;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
-
-    private String todoStr;
-    private PagerAdapter pagerAdapter;
     private ViewPager vpPager;
     private BottomNavigationView bottomNavigationView;
+    private MenuItem prevMenuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ArrayList<Fragment> fragments = new ArrayList<>();
 
         fragments.add(ToDoListFragment.newInstance());
-        fragments.add(ToDoListFragment.newInstance());
+        //fragments.add(ToDoListFragment.newInstance());
+        fragments.add(ProfileFragment.newInstance());
         // ViewPager <-----> Adapter <----> ArrayList
         MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager(), fragments);
         vpPager.setAdapter(mainViewPagerAdapter);
@@ -80,7 +79,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setUpViewpagerListener() {
+        vpPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) { }
+
+            @Override
+            public void onPageSelected(int position) {
+                if(prevMenuItem != null ){
+                    prevMenuItem.setChecked(false);
+                }
+                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+                prevMenuItem = bottomNavigationView.getMenu().getItem(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) { }
+        });
     }
 
 

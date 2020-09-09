@@ -27,4 +27,7 @@
     <string name="clean_list">Clean List</string>
     <string name="profile">Profile</string>
     <string name="my_task">My task</string>
+
+    <string name="name_placeholder">Admin todopoderoso</string>
+    <string name="email_placeholder">admin@email.com</string>
 </resources>
